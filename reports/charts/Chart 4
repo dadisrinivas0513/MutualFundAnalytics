@@ -1,0 +1,8 @@
+df = pd.read_csv("data/raw/07_scheme_performance.csv")
+
+df.plot(
+    y=df.columns[1],
+    kind="hist"
+)
+
+plt.savefig("reports/charts/performance_distribution.png")

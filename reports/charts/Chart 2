@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data/raw/03_aum_by_fund_house.csv")
+
+df.plot(
+    x="fund_house",
+    y="aum_cr",
+    kind="bar",
+    figsize=(12,6)
+)
+
+plt.savefig("reports/charts/aum_by_fundhouse.png")
