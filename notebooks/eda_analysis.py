@@ -6,12 +6,12 @@ df = pd.read_csv("data/raw/03_aum_by_fund_house.csv")
 print(df.head())
 
 df.plot(
-    x=df.columns[0],
-    y=df.columns[1],
-    kind="bar"
+    x="fund_house",
+    y="aum_cr",
+    kind="bar",
+    figsize=(12,6)
 )
 
+plt.title("AUM by Fund House")
 plt.tight_layout()
-plt.savefig("reports/aum_chart.png")
-
-print("Chart Saved")
+plt.show()

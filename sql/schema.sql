@@ -1,30 +1,29 @@
--- Mutual Fund Analytics Schema
-
-CREATE TABLE dim_fund(
+CREATE TABLE dim_fund (
     amfi_code INTEGER PRIMARY KEY,
     scheme_name TEXT,
     fund_house TEXT,
     category TEXT
 );
 
-CREATE TABLE fact_nav(
-    amfi_code INTEGER,
+CREATE TABLE fact_nav (
     nav_date DATE,
+    amfi_code INTEGER,
     nav REAL
 );
 
-CREATE TABLE fact_aum(
+CREATE TABLE fact_aum (
+    report_date DATE,
     fund_house TEXT,
     aum_cr REAL
 );
 
-CREATE TABLE fact_sip(
-    month TEXT,
+CREATE TABLE fact_sip (
+    report_month DATE,
     sip_inflow_cr REAL
 );
 
-CREATE TABLE fact_transactions(
-    investor_id INTEGER,
+CREATE TABLE fact_transactions (
+    transaction_date DATE,
     amount REAL,
     transaction_type TEXT
 );
