@@ -1,8 +1,17 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-funds = pd.read_csv("data/raw/01_fund_master.csv")
+df = pd.read_csv("data/raw/03_aum_by_fund_house.csv")
 
-print("Rows:", funds.shape[0])
-print("Columns:", funds.shape[1])
+print(df.head())
 
-print(funds.head())
+df.plot(
+    x=df.columns[0],
+    y=df.columns[1],
+    kind="bar"
+)
+
+plt.tight_layout()
+plt.savefig("reports/aum_chart.png")
+
+print("Chart Saved")
