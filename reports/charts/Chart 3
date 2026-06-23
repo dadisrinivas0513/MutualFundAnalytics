@@ -1,9 +1,0 @@
-df = pd.read_csv("data/raw/05_category_inflows.csv")
-
-df.plot(
-    x=df.columns[0],
-    y=df.columns[1],
-    kind="bar"
-)
-
-plt.savefig("reports/charts/category_inflows.png")
